@@ -1,0 +1,29 @@
+﻿<h3>Registered Accounts</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>NAME ACCOUNT</th>
+            <th>BALANCE</th>
+        </tr>
+    </thead>
+
+
+    @{
+        foreach (var item in (List<AccountModel>)ViewBag.ListAccount)
+        {
+            <tbody>
+                <tr>
+                    <th><button type="button" class="btn btn-danger">Delete</button></th>
+                    <th>@item.Id.ToString()</th>
+                    <th>@item.NameAccount.ToString()</th>
+                    <th>R$ @item.Balance.ToString()</th>
+                </tr>
+            </tbody>
+
+        }
+    }
+
+</table>
