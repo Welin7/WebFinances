@@ -1,0 +1,19 @@
+﻿@model PlaneAccountModel
+
+ <h3>Create Chart of Accounts</h3>
+
+<form asp-controller="PlaneAccount" asp-action="CreatePlaneAccount">
+
+    <div class="form-group">
+        <label>Description:</label>
+        <input type="text" class="form-control" asp-for="Description">
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Type:</label>
+        <input type="radio" class="form-control" asp-for="Type" value="Recipe">
+        <input type="radio" class="form-control" asp-for="Type" value="Expense">
+    </div>
+    <button type="submit" class="btn btn-block btn-success">Register</button>
+</form>

@@ -1,0 +1,19 @@
+﻿@model AccountModel
+
+<h3>Create an Account</h3>
+
+<form asp-controller="Account" asp-action="CreateAccount">
+
+    <div class="form-group">
+        <label>Account name:</label>
+        <input type="text" class="form-control" asp-for="NameAccount">
+        <span asp-validation-for="NameAccount" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Balance:</label>
+        <input type="text" class="form-control" asp-for="Balance">
+        <span asp-validation-for="Balance" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-block btn-success">Register</button>
+</form>

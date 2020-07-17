@@ -16,7 +16,7 @@
         {
             <tbody>
                 <tr>
-                    <th><button type="button" class="btn btn-danger">Delete</button></th>
+                    <th><button type="button" class="btn btn-danger" onclick="Delete(@item.Id.ToString())">Delete</button></th>
                     <th>@item.Id.ToString()</th>
                     <th>@item.NameAccount.ToString()</th>
                     <th>R$ @item.Balance.ToString()</th>
@@ -27,3 +27,17 @@
     }
 
 </table>
+
+<button type="button" class="btn btn-block btn-primary" onclick="CreateAccount()">Create an account</button>
+
+<script>
+    function CreateAccount()
+    {
+        window.location.href = "../Account/CreateAccount";
+    }
+
+    function Delete(Id)
+    {
+        window.location.href = "../Account/DeleteAccount/" + Id;
+    }
+</script>

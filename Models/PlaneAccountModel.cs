@@ -9,46 +9,42 @@ using WebFinancas.DataLayer;
 
 namespace WebFinancas.Models
 {
-    public class AccountModel
+    public class PlaneAccountModel
     {
         public int Id { get; set; }
-        
-        [Required(ErrorMessage = "Enter your Account name.")]
-        public string NameAccount { get; set; }
-        
-        [Required(ErrorMessage = "Enter your account balance.")]
-        public double Balance { get; set; }
-
+        [Required(ErrorMessage = "Enter your Description.")]
+        public string Description { get; set; }
+        public string Type { get; set; }
         public int User_Id { get; set; }
-        
+
         public IHttpContextAccessor __httpContextAccessor { get; set; }
 
-        public AccountModel()
+        public PlaneAccountModel()
         {
 
         }
 
         //Receives the context for access to session variables
-        public AccountModel(IHttpContextAccessor httpContextAccessor)
+        public PlaneAccountModel(IHttpContextAccessor httpContextAccessor)
         {
             __httpContextAccessor = httpContextAccessor;
         }
 
-        public List<AccountModel> ListAccount()
+        public List<PlaneAccountModel> ListPlaneAccount()
         {
-            List<AccountModel> List = new List<AccountModel>();
-            AccountModel item;
+            List<PlaneAccountModel> List = new List<PlaneAccountModel>();
+            PlaneAccountModel item;
             string id_User_Logged = __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
-            string sql = $"SELECT ID, NAMEACCOUNT, BALANCE, USER_ID FROM ACCOUNT WHERE USER_ID = {id_User_Logged}";
+            string sql = $"SELECT ID, DESCRIPTION, TYPE, USER_ID FROM PLANEACCOUNT WHERE USER_ID = {id_User_Logged}";
             DAL objectDAL = new DAL();
             DataTable datatable = objectDAL.ReturnDataTable(sql);
 
-            for(int i = 0; i < datatable.Rows.Count; i++)
+            for (int i = 0; i < datatable.Rows.Count; i++)
             {
-                item = new AccountModel();
+                item = new PlaneAccountModel();
                 item.Id = int.Parse(datatable.Rows[i]["ID"].ToString());
-                item.NameAccount = datatable.Rows[i]["NameAccount"].ToString();
-                item.Balance = double.Parse(datatable.Rows[i]["Balance"].ToString());
+                item.Description = datatable.Rows[i]["Description"].ToString();
+                item.Type = datatable.Rows[i]["Type"].ToString();
                 item.User_Id = int.Parse(datatable.Rows[i]["User_Id"].ToString());
                 List.Add(item);
             }
@@ -56,17 +52,17 @@ namespace WebFinancas.Models
             return List;
         }
 
-        public void RegisterAccount()
+        public void RegisterPlaneAccount()
         {
             string id_User_Logged = __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
-            string sql = $"INSERT INTO ACCOUNT(NAMEACCOUNT, BALANCE, USER_ID) VALUES('{NameAccount}','{Balance}','{id_User_Logged}')";
+            string sql = $"INSERT INTO PLANEACCOUNT(DESCRIPTION, TYPE, USER_ID) VALUES('{Description}','{Type}','{id_User_Logged}')";
             DAL objectDAL = new DAL();
             objectDAL.ExecuteCommandSql(sql);
         }
 
-        public void DeleteAccount(int Id_Account)
+        public void DeletePlaneAccount(int Id_Account)
         {
-            new DAL().ExecuteCommandSql("DELETE FROM ACCOUNT WHERE ID = " + Id_Account);
+            new DAL().ExecuteCommandSql("DELETE FROM PLANEACCOUNT WHERE ID = " + Id_Account);
         }
     }
 }

@@ -1,5 +1,43 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<h3>Registered Chart of accounts</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>DESCRIPTION</th>
+            <th>TYPE</th>
+        </tr>
+    </thead>
+
+
+    @{
+        foreach (var item in (List<PlaneAccountModel>)ViewBag.ListPlaneAccount)
+        {
+            <tbody>
+                <tr>
+                    <th><button type="button" class="btn btn-danger" onclick="Delete(@item.Id.ToString())">Delete</button></th>
+                    <th>@item.Id.ToString()</th>
+                    <th>@item.Description.ToString()</th>
+                    <th>@item.Type.ToString()</th>
+                </tr>
+            </tbody>
+
+        }
+    }
+
+</table>
+
+<button type="button" class="btn btn-block btn-primary" onclick="CreatePlaneAccount()">Create an Plane Account</button>
+
+<script>
+    function CreatePlaneAccount()
+    {
+        window.location.href = "../PlaneAccount/CreatePlaneAccount";
+    }
+
+    function Delete(Id)
+    {
+        window.location.href = "../PlaneAccount/DeletePlaneAccount/" + Id;
+    }
+</script>
