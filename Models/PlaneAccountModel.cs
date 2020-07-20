@@ -52,10 +52,37 @@ namespace WebFinancas.Models
             return List;
         }
 
+        //metod load record to edition pass id
+        public PlaneAccountModel LoadRecords(int? Id)
+        {
+            PlaneAccountModel item = new PlaneAccountModel();
+            string id_User_Logged = __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
+            string sql = $"SELECT ID, DESCRIPTION, TYPE, USER_ID FROM PLANEACCOUNT WHERE USER_ID = {id_User_Logged} AND ID = {Id}";
+            DAL objectDAL = new DAL();
+            DataTable datatable = objectDAL.ReturnDataTable(sql);
+
+            item.Id = int.Parse(datatable.Rows[0]["ID"].ToString());
+            item.Description = datatable.Rows[0]["Description"].ToString();
+            item.Type = datatable.Rows[0]["Type"].ToString();
+            item.User_Id = int.Parse(datatable.Rows[0]["User_Id"].ToString());
+
+            return item;
+        }
+
         public void RegisterPlaneAccount()
         {
             string id_User_Logged = __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
-            string sql = $"INSERT INTO PLANEACCOUNT(DESCRIPTION, TYPE, USER_ID) VALUES('{Description}','{Type}','{id_User_Logged}')";
+            string sql = "";
+            
+            if(Id == 0)
+            {
+                sql = $"INSERT INTO PLANEACCOUNT(DESCRIPTION, TYPE, USER_ID) VALUES('{Description}','{Type}','{id_User_Logged}')";
+            }
+            else
+            {
+                sql = $"UPDATE PLANEACCOUNT SET DESCRIPTION = '{Description}', Type = '{Type}' WHERE USER_ID = '{id_User_Logged}' AND ID = '{Id}'";
+            }
+            
             DAL objectDAL = new DAL();
             objectDAL.ExecuteCommandSql(sql);
         }

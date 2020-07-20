@@ -33,7 +33,18 @@ namespace WebFinancas.Controllers
                 PlaneAccount.RegisterPlaneAccount();
                 return RedirectToAction("Index");
             }
+            return View();
+        }
 
+        [HttpGet]
+        public IActionResult CreatePlaneAccountEdition(int? Id)
+        {
+            if(Id != null)
+            {
+                PlaneAccountModel objectPlaneAccount = new PlaneAccountModel(__httpContextAccessor);
+                ViewBag.Records = objectPlaneAccount.LoadRecords(Id);
+
+            }
             return View();
         }
 

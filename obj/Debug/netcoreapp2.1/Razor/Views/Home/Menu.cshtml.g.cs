@@ -69,7 +69,7 @@ using WebFinancas.Models;
             WriteLiteral("\r\n<div class=\"row\">\r\n    <a href=\"../Account/Index\">\r\n        <div class=\"col-lg-4 text-center\">\r\n            ");
             EndContext();
             BeginContext(152, 46, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "1a9432b97dad4d3292c9377e9f4c8a27", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2cebb428e0c1488a81d11c055e906e00", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -88,7 +88,7 @@ using WebFinancas.Models;
             WriteLiteral("\r\n            <h3>Crete Account</h3>\r\n        </div>\r\n    </a>\r\n\r\n    <a href=\"../PlaneAccount/Index\">\r\n        <div class=\"col-lg-4 text-center\">\r\n            ");
             EndContext();
             BeginContext(358, 55, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "07f49c9d697843d3a75bde26a62d8057", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "705847b8854842ef9916e8b949b96351", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -107,7 +107,7 @@ using WebFinancas.Models;
             WriteLiteral("\r\n            <h3>Plane Of Account</h3>\r\n        </div>\r\n    </a>\r\n    \r\n    <a href=\"../RegisterTransaction/Index\">\r\n        <div class=\"col-lg-4 text-center\">\r\n            ");
             EndContext();
             BeginContext(587, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9529f6e6be1d4ccd90fda0a8df4b3b7d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b66f052187d74f2b85d993179eb0a15d", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -126,7 +126,7 @@ using WebFinancas.Models;
             WriteLiteral("\r\n            <h3>Register Transaction</h3>\r\n        </div>\r\n    </a>\r\n</div>\r\n<br />\r\n<br />\r\n<br />\r\n<div class=\"row\">\r\n    <a href=\"../RegisterTransaction/Extract\">\r\n        <div class=\"col-lg-4 text-center\">\r\n            ");
             EndContext();
             BeginContext(871, 46, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "2fc31b091edd40cf9920bd772be204db", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "38f4ffb5bc1e420681650090df1d312c", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -145,7 +145,7 @@ using WebFinancas.Models;
             WriteLiteral("\r\n            <h3>Extract</h3>\r\n        </div>\r\n    </a>\r\n\r\n    <a href=\"../RegisterTransaction/FinanceReport\">\r\n        <div class=\"col-lg-4 text-center\">\r\n            ");
             EndContext();
             BeginContext(1086, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "699a704a2de84dfb8d9136e7bd09465d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "0ece125bb5084d31911bff7b6a814dc5", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -164,7 +164,7 @@ using WebFinancas.Models;
             WriteLiteral("\r\n            <h3>Finance Report</h3>\r\n        </div>\r\n    </a>\r\n\r\n    <a href=\"../Home/Help\">\r\n        <div class=\"col-lg-4 text-center\">\r\n            ");
             EndContext();
             BeginContext(1291, 43, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3b6fd061f2d64ada8199738b6f3b3966", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9f2d33d058a548aabf0c28002d437e69", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

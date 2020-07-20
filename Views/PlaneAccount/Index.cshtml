@@ -4,6 +4,7 @@
     <thead>
         <tr>
             <th>#</th>
+            <th>#</th>
             <th>ID</th>
             <th>DESCRIPTION</th>
             <th>TYPE</th>
@@ -16,6 +17,7 @@
         {
             <tbody>
                 <tr>
+                    <th><button type="button" class="btn btn-primary"onclick="Edit(@item.Id.ToString())">Edit</button></th>
                     <th><button type="button" class="btn btn-danger" onclick="Delete(@item.Id.ToString())">Delete</button></th>
                     <th>@item.Id.ToString()</th>
                     <th>@item.Description.ToString()</th>
@@ -39,5 +41,9 @@
     function Delete(Id)
     {
         window.location.href = "../PlaneAccount/DeletePlaneAccount/" + Id;
+    }
+
+    function Edit(Id) {
+        window.location.href = "../PlaneAccount/CreatePlaneAccountEdition/" + Id;
     }
 </script>
