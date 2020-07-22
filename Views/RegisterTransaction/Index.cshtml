@@ -1,5 +1,57 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<h3>Registered Transactions</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>#</th>
+            <th>ID</th>
+            <th>DATE OF TRANSACTION</th>
+            <th>TYPE</th>
+            <th>VALUE</th>
+            <th>DESCRIPTION</th>
+            <th>ACCOUNT</th>
+            <th>CHART OF ACCOUNTS</th>
+        </tr>
+    </thead>
+
+
+    @{
+        foreach (var item in (List<TransactionModel>)ViewBag.ListTransaction)
+        {
+            <tbody>
+                    <tr>
+                        <th><button type="button" class="btn btn-primary" onclick="Edit(@item.Id.ToString())">Edit</button></th>
+                        <th><button type="button" class="btn btn-danger" onclick="Delete(@item.Id.ToString())">Delete</button></th>
+                        <th>@item.Id.ToString()</th>
+                        <th>@item.DateTransaction.ToString()</th>
+                        <th>@item.Type.ToString()</th>
+                        <th>R$ @item.Value.ToString()</th>
+                        <th>@item.Description.ToString()</th>
+                        <th>@item.NameAccount.ToString()</th>
+                        <th>@item.NamePlaneAccount.ToString()</th>
+                    </tr>
+            </tbody>
+
+        }
+    }
+
+</table>
+
+<button type="button" class="btn btn-block btn-primary" onclick="CreateTransaction()">Create an Transaction</button>
+
+<script>
+    function CreateTransaction()
+    {
+        window.location.href = "../RegisterTransaction/CreateTransaction";
+    }
+
+    function Delete(Id)
+    {
+        window.location.href = "../RegisterTransaction/DeleteTransaction/" + Id;
+    }
+
+    function Edit(Id) {
+        window.location.href = "../RegisterTransaction/CreateTransactionEdition/" + Id;
+    }
+</script>
