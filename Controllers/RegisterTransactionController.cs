@@ -24,6 +24,34 @@ namespace WebFinancas.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult RegisterTransaction(TransactionModel Transaction)
+        {
+            if (ModelState.IsValid)
+            {
+                Transaction.__httpContextAccessor = __httpContextAccessor;
+                //Transaction.RegisterTransaction();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult RegisterTransaction(int? Id)
+        {
+            if (Id != null)
+            {
+                TransactionModel objectTransaction = new TransactionModel(__httpContextAccessor);
+                //ViewBag.RecordsTransaction = objectTransaction.LoadRecordsTransaction(Id);
+
+            }
+
+            ViewBag.ListAccount = new AccountModel(__httpContextAccessor).ListAccount();
+            ViewBag.ListPlaneAccount = new PlaneAccountModel(__httpContextAccessor).ListPlaneAccount();
+            
+            return View();
+        }
+
         public IActionResult Extract()
         {
             return View();

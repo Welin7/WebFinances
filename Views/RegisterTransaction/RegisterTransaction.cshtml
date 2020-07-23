@@ -1,0 +1,83 @@
+﻿@model TransactionModel
+
+ <h3>Register an Transaction</h3>
+
+@{
+    var tempId = 0;
+    var tempDateTransaction = "";
+    var tempValue = "";
+    var tempDescription = "";
+    var tempType = "";
+
+    try
+    {
+        tempId = int.Parse(ViewBag.Records.Id.ToString());
+        tempDescription = ViewBag.Records.Description.ToString();
+        tempType = ViewBag.Records.Type.ToString();
+    }
+    catch { }
+ }
+
+<form asp-controller="RegisterTransaction" asp-action="RegisterTransaction">
+    <input type="hidden" asp-for="Id" value="@tempId" />
+
+    <div class="form-group">
+        <label for="date">Date of Transaction:</label>
+        <input type="date" class="form-control" asp-for="DateTransaction" value="@tempDateTransaction">
+        <span asp-validation-for="DateTransaction" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Type:</label>
+
+        @{
+            if (tempType == "R")
+            {
+                <div class="radio"><label><input type="radio" asp-for="Type" value="R" checked>Recipe</label></div>
+                <div class="radio"><label><input type="radio" asp-for="Type" value="E" unchecked>Expense</label></div>
+            }
+            else
+            {
+                <div class="radio"><label><input type="radio" asp-for="Type" value="R" unchecked>Recipe</label></div>
+                <div class="radio"><label><input type="radio" asp-for="Type" value="E" checked>Expense</label></div>
+            }
+        }
+    </div>
+
+    <div class="form-group">
+        <label>Value:</label>
+        <input type="number" class="form-control" asp-for="Value" value="@tempValue">
+        <span asp-validation-for="Value" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Description:</label>
+        <textarea rows="6" class="form-control" asp-for="Description">@tempDescription</textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Account:</label>
+        <select asp-for="Account_Id">
+            @{
+                foreach (var item in (List<AccountModel>)ViewBag.ListAccount)
+                {
+                    <option value="@item.Id.ToString()">@item.NameAccount.ToString()</option>
+                }
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Plane Account:</label>
+        <select asp-for="PlaneAccount_Id">
+            @{
+                foreach (var item in (List<PlaneAccountModel>)ViewBag.ListPlaneAccount)
+                {
+                    <option value="@item.Id.ToString()">@item.Description.ToString()</option>
+                }
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-block btn-success">Register Transaction</button>
+</form>

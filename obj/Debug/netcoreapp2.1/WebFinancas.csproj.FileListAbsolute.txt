@@ -47,3 +47,4 @@ C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.dll
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.pdb
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.genruntimeconfig.cache
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.csproj.CopyComplete
+C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\RegisterTransaction\RegisterTransaction.cshtml.g.cs
