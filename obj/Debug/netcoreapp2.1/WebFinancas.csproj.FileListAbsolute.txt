@@ -1,3 +1,8 @@
+C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.AssemblyInfoInputs.cache
+C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.AssemblyInfo.cs
+C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.csproj.CoreCompileInputs.cache
+C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.RazorAssemblyInfo.cache
+C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.RazorAssemblyInfo.cs
 C:\Financeiro\WebFinancas\bin\Debug\netcoreapp2.1\appsettings.Development.json
 C:\Financeiro\WebFinancas\bin\Debug\netcoreapp2.1\appsettings.json
 C:\Financeiro\WebFinancas\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
@@ -8,12 +13,6 @@ C:\Financeiro\WebFinancas\bin\Debug\netcoreapp2.1\WebFinancas.dll
 C:\Financeiro\WebFinancas\bin\Debug\netcoreapp2.1\WebFinancas.pdb
 C:\Financeiro\WebFinancas\bin\Debug\netcoreapp2.1\WebFinancas.Views.dll
 C:\Financeiro\WebFinancas\bin\Debug\netcoreapp2.1\WebFinancas.Views.pdb
-C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.csprojAssemblyReference.cache
-C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.AssemblyInfoInputs.cache
-C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.AssemblyInfo.cs
-C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.csproj.CoreCompileInputs.cache
-C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.RazorAssemblyInfo.cache
-C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.RazorAssemblyInfo.cs
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.TagHelpers.input.cache
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.TagHelpers.output.cache
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.RazorCoreGenerate.cache
@@ -31,6 +30,7 @@ C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\PlaneAccount\Index
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\RegisterTransaction\Extract.cshtml.g.cs
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\RegisterTransaction\FinanceReport.cshtml.g.cs
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\RegisterTransaction\Index.cshtml.g.cs
+C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\RegisterTransaction\RegisterTransaction.cshtml.g.cs
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -47,4 +47,5 @@ C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.dll
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.pdb
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.genruntimeconfig.cache
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.csproj.CopyComplete
-C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\RegisterTransaction\RegisterTransaction.cshtml.g.cs
+C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.csprojAssemblyReference.cache
+C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\RegisterTransaction\DeleteTransaction.cshtml.g.cs

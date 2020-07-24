@@ -30,7 +30,7 @@ namespace WebFinancas.Controllers
             if (ModelState.IsValid)
             {
                 Transaction.__httpContextAccessor = __httpContextAccessor;
-                //Transaction.RegisterTransaction();
+                Transaction.RegisterTransaction();
                 return RedirectToAction("Index");
             }
             return View();
@@ -42,14 +42,29 @@ namespace WebFinancas.Controllers
             if (Id != null)
             {
                 TransactionModel objectTransaction = new TransactionModel(__httpContextAccessor);
-                //ViewBag.RecordsTransaction = objectTransaction.LoadRecordsTransaction(Id);
-
+                ViewBag.RecordsTransaction = objectTransaction.LoadTransaction(Id);
             }
 
             ViewBag.ListAccount = new AccountModel(__httpContextAccessor).ListAccount();
             ViewBag.ListPlaneAccount = new PlaneAccountModel(__httpContextAccessor).ListPlaneAccount();
             
             return View();
+        }
+
+        public IActionResult DeleteTransaction(int Id)
+        {
+            TransactionModel objectTransaction = new TransactionModel(__httpContextAccessor);
+            ViewBag.RecordsTransaction = objectTransaction.LoadTransaction(Id);
+           
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int Id)
+        {
+            TransactionModel objectTransaction= new TransactionModel(__httpContextAccessor);
+            objectTransaction.Delete(Id);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Extract()

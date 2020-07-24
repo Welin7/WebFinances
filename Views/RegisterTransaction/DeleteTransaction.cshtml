@@ -1,0 +1,24 @@
+﻿<h3>Do you want to delete the selected transaction?</h3>
+<br/>
+<br />
+
+@{
+    <p><strong>ID:</strong> @ViewBag.RecordsTransaction.Id.ToString()</p>
+    <p><strong>Date Transaction:</strong> @ViewBag.RecordsTransaction.DateTransaction.ToString()</p>
+    <p><strong>Description:</strong> @ViewBag.RecordsTransaction.Description.ToString()</p>
+    <p><strong>Value:</strong> @ViewBag.RecordsTransaction.Value.ToString()</p>
+}
+
+<button type="button" onclick="Cancel()" class="btn btn-block btn-default">Cancel</button>
+<button type="button" onclick="Delete(@ViewBag.RecordsTransaction.Id.ToString())" class="btn btn-block btn-danger">Delete</button>
+
+<script>
+    function Cancel() {
+        window.location.href = "../../RegisterTransaction/Index";
+    }
+
+    function Delete(Id) {
+        window.location.href = "../../RegisterTransaction/Delete/" + Id;
+    }
+
+</script>

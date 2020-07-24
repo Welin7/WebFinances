@@ -5,15 +5,21 @@
 @{
     var tempId = 0;
     var tempDateTransaction = "";
-    var tempValue = "";
+    var tempValue = 0.0;
     var tempDescription = "";
     var tempType = "";
+    var tempAccountId = 0;
+    var tempPlaneAccountId = 0;
 
     try
     {
-        tempId = int.Parse(ViewBag.Records.Id.ToString());
-        tempDescription = ViewBag.Records.Description.ToString();
-        tempType = ViewBag.Records.Type.ToString();
+        tempId = int.Parse(ViewBag.RecordsTransaction.Id.ToString());
+        tempDateTransaction = DateTime.Parse(ViewBag.RecordsTransaction.DateTransaction.ToString()).ToString("yyyy-MM-dd");
+        tempValue = double.Parse(ViewBag.RecordsTransaction.Value.ToString());
+        tempDescription = ViewBag.RecordsTransaction.Description.ToString();
+        tempType = ViewBag.RecordsTransaction.Type.ToString();
+        tempAccountId = int.Parse(ViewBag.RecordsTransaction.Account_Id.ToString());
+        tempPlaneAccountId = int.Parse(ViewBag.RecordsTransaction.PlaneAccount_Id.ToString());
     }
     catch { }
  }
@@ -52,17 +58,24 @@
 
     <div class="form-group">
         <label>Description:</label>
-        <textarea rows="6" class="form-control" asp-for="Description">@tempDescription</textarea>
+        @Html.TextArea("Description", tempDescription, new {@class = "form-control"})
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
 
     <div class="form-group">
         <label>Account:</label>
-        <select asp-for="Account_Id">
+        <select asp-for="Account_Id" class=" form-control">
             @{
                 foreach (var item in (List<AccountModel>)ViewBag.ListAccount)
                 {
-                    <option value="@item.Id.ToString()">@item.NameAccount.ToString()</option>
+                    if (item.Id.ToString() == tempAccountId.ToString())
+                    {
+                        <option selected value="@item.Id.ToString()">@item.NameAccount.ToString()</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id.ToString()">@item.NameAccount.ToString()</option>
+                    }
                 }
             }
         </select>
@@ -70,11 +83,18 @@
 
     <div class="form-group">
         <label>Plane Account:</label>
-        <select asp-for="PlaneAccount_Id">
+        <select asp-for="PlaneAccount_Id" class=" form-control">
             @{
                 foreach (var item in (List<PlaneAccountModel>)ViewBag.ListPlaneAccount)
                 {
-                    <option value="@item.Id.ToString()">@item.Description.ToString()</option>
+                    if (item.Id.ToString() == tempPlaneAccountId.ToString())
+                    {
+                        <option selected value="@item.Id.ToString()">@item.Description.ToString()</option>
+                    }
+                    else
+                    {
+                        <option value="@item.Id.ToString()">@item.Description.ToString()</option>
+                    }
                 }
             }
         </select>
