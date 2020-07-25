@@ -46,16 +46,14 @@ namespace WebFinancas.Controllers
             }
 
             ViewBag.ListAccount = new AccountModel(__httpContextAccessor).ListAccount();
-            ViewBag.ListPlaneAccount = new PlaneAccountModel(__httpContextAccessor).ListPlaneAccount();
-            
+            ViewBag.ListPlaneAccount = new PlaneAccountModel(__httpContextAccessor).ListPlaneAccount();           
             return View();
         }
 
         public IActionResult DeleteTransaction(int Id)
         {
             TransactionModel objectTransaction = new TransactionModel(__httpContextAccessor);
-            ViewBag.RecordsTransaction = objectTransaction.LoadTransaction(Id);
-           
+            ViewBag.RecordsTransaction = objectTransaction.LoadTransaction(Id);           
             return View();
         }
 
@@ -67,8 +65,13 @@ namespace WebFinancas.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Extract()
+        [HttpPost]
+        [HttpGet]
+        public IActionResult Extract(TransactionModel Transaction)
         {
+            Transaction.__httpContextAccessor = __httpContextAccessor;
+            ViewBag.ListTransaction = Transaction.ListTransaction();
+            ViewBag.ListAccount = new AccountModel(__httpContextAccessor).ListAccount();
             return View();
         }
 

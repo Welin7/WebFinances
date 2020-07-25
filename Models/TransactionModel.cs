@@ -16,6 +16,8 @@ namespace WebFinancas.Models
         [Required(ErrorMessage = "Enter the Date of Transaction.")]
         public string DateTransaction { get; set; }
 
+        public string FinalDate { get; set; } //include to filter in Extract
+
         public string Type { get; set; }
 
         [Required(ErrorMessage = "Enter the Value.")]
@@ -51,12 +53,35 @@ namespace WebFinancas.Models
         {
             List<TransactionModel> List = new List<TransactionModel>();
             TransactionModel item;
+
+            //Used to filter transactions in the extract view
+            string filter = "";
+
+            if(DateTransaction != null && (FinalDate != null))
+            {
+                filter += $" AND T.DateTransaction >= '{DateTime.Parse(DateTransaction).ToString("yyyy/MM/dd")}' AND T.DateTransaction <= '{DateTime.Parse(FinalDate).ToString("yyyy/MM/dd")}'";
+            }
+
+            if(Type != null)
+            {
+                if(Type != "A")
+                {
+                    filter += $" AND T.Type = '{Type}' ";
+                }
+            }
+
+            if(Account_Id != 0)
+            {
+                filter += $" AND T.Account_Id = '{Account_Id}' ";
+
+            }
+
             string id_User_Logged = __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
             string sql = " SELECT T.Id, T.DateTransaction, T.Type, T.Value, T.Description, " +
                          " T.Account_Id, A.NameAccount, PlaneAccount_Id, PA.Description As NamePlaneAccount FROM Transaction T " +
                          " INNER JOIN Account A on A.Id = T.Account_Id " +
                          " INNER JOIN PlaneAccount PA on PA.Id = T.PlaneAccount_Id " +
-                         $" WHERE T.User_Id = {id_User_Logged} ORDER BY T.DateTransaction DESC LIMIT 10";
+                         $" WHERE T.User_Id = {id_User_Logged} {filter} ORDER BY T.DateTransaction DESC LIMIT 15";
 
             DAL objectDAL = new DAL();
             DataTable datatable = objectDAL.ReturnDataTable(sql);

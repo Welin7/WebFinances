@@ -1,1 +1,98 @@
-﻿<h2>Extract</h2>
+﻿@model TransactionModel
+
+<h3>Extract</h3>
+
+<div class="container">
+    <form asp-controller="RegisterTransaction" asp-action="Extract">
+        <div class="form-group">
+            <label>Date of Transaction (Start):</label>
+            <input type="date" asp-for="DateTransaction" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Date of Transaction (Final):</label>
+            <input type="date" asp-for="FinalDate" class="form-control">
+        </div>
+
+        <div class="form-group">
+            <label>Transaction Type:</label>
+            <div class="radio"><label><input type="radio" asp-for="Type" value="A" checked>Recipe and Expense</label></div>
+            <div class="radio"><label><input type="radio" asp-for="Type" value="R" checked>Recipe</label></div>
+            <div class="radio"><label><input type="radio" asp-for="Type" value="E" checked>Expense</label></div>
+        </div>
+
+        <div class="form-group">
+            <label>Account</label>
+            <select asp-for="Account_Id" class=" form-control">
+                @{
+                    foreach (var item in (List<AccountModel>)ViewBag.ListAccount)
+                    {
+                        <option value="@item.Id.ToString()">@item.NameAccount.ToString()</option>
+                    }
+                }
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-success">Search</button>
+    </form>
+</div>
+<br />
+
+<table class=" table table-bordered">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>ID</th>
+            <th>DATE OF TRANSACTION</th>
+            <th>TYPE</th>
+            <th>VALUE</th>
+            <th>DESCRIPTION</th>
+            <th>ACCOUNT</th>
+            <th>CHART OF ACCOUNTS</th>
+        </tr>
+    </thead>
+
+    @{
+        var totalRecipe = 0.0;
+        var totalExpense = 0.0;
+        var Balance = 0.0;
+
+        foreach (var item in (List<TransactionModel>)ViewBag.ListTransaction)
+        {
+            <tbody>
+                <tr>
+                    <th><button type="button" class="btn btn-primary" onclick="Edit(@item.Id.ToString())">Edit</button></th>
+                    <th>@item.Id.ToString()</th>
+                    <th>@item.DateTransaction.ToString()</th>
+                    <th>@item.Type.ToString()</th>
+                    <th>R$ @item.Value.ToString()</th>
+                    <th>@item.Description.ToString()</th>
+                    <th>@item.NameAccount.ToString()</th>
+                    <th>@item.NamePlaneAccount.ToString()</th>
+                </tr>
+
+                @{
+                    if (item.Type == "R")
+                    {
+                        totalRecipe += double.Parse(item.Value.ToString());
+                    }
+
+                    else
+                    {
+                        totalExpense += double.Parse(item.Value.ToString());
+                    }
+                }
+            </tbody>
+        }
+
+        Balance = totalRecipe - totalExpense;
+    }
+</table>
+
+<h3><strong>Balance:</strong>R$ @Balance</h3>
+
+<script>
+    function Edit(Id) {
+        window.location.href = "../RegisterTransaction/RegisterTransaction/" + Id;
+    }
+</script>
