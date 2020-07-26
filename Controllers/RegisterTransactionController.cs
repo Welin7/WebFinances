@@ -77,6 +77,25 @@ namespace WebFinancas.Controllers
 
         public IActionResult FinanceReport()
         {
+            List<FinanceReport> list = new FinanceReport().ReturnDataGraphicPie();
+            string values = "";
+            string labels = "";
+            string colors = "";
+            
+            //Used the function to generate random colors
+            var random = new Random();
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                values += list[i].TotalValue.ToString() + ",";
+                labels += "'" + list[i].PlaneAccountName.ToString() + "',";
+                colors += "'" + String.Format("#{0:X6}", random.Next(0x1000000)) + "',";
+            }
+
+            ViewBag.Colors = colors;
+            ViewBag.Values = values;
+            ViewBag.Labels = labels;
+
             return View();
         }
     }
