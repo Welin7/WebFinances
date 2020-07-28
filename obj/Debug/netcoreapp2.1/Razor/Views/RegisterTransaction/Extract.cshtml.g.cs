@@ -66,12 +66,12 @@ using WebFinancas.Models;
             WriteLiteral("\r\n<h3>Extract</h3>\r\n\r\n<div class=\"container\">\r\n    ");
             EndContext();
             BeginContext(76, 1423, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ef281b4dae34327913d3b277d52b74c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d18b7a7aa7204c5ab766c0dd7d320c3f", async() => {
                 BeginContext(140, 105, true);
                 WriteLiteral("\r\n        <div class=\"form-group\">\r\n            <label>Date of Transaction (Start):</label>\r\n            ");
                 EndContext();
                 BeginContext(245, 66, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "9ecbe90aaeeb4158940b09f0b80d9b6c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "01ff422da1544fa298465b5d9ab7efa9", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -97,7 +97,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label>Date of Transaction (Final):</label>\r\n            ");
                 EndContext();
                 BeginContext(434, 60, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "88e5c6c260474677b3edb9af22b00584", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "548f5460296d407ab316de6808886575", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -123,7 +123,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label>Transaction Type:</label>\r\n            <div class=\"radio\"><label>");
                 EndContext();
                 BeginContext(632, 53, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "d3949c80eb854eca9d70971e5d0dfa44", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "260ef0c60a6844a688e37dcb1ef85439", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -153,7 +153,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("Recipe and Expense</label></div>\r\n            <div class=\"radio\"><label>");
                 EndContext();
                 BeginContext(757, 53, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "a7b00e77d0174eec89e9b1f27325ec82", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b2cab12fe3e4422a8d994db8402787ee", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -183,7 +183,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("Recipe</label></div>\r\n            <div class=\"radio\"><label>");
                 EndContext();
                 BeginContext(870, 53, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "cd22b37cffd4433fa9e8a60cb4206984", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "a569da6472a24916b0759de7f29eea87", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -213,7 +213,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("Expense</label></div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label>Account</label>\r\n            ");
                 EndContext();
                 BeginContext(1046, 341, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ed039b45e3b741bc89ea4674e27e590c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("select", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "88c85c91dbe545b7a2f50a8ec56368ce", async() => {
                     BeginContext(1097, 2, true);
                     WriteLiteral("\r\n");
                     EndContext();
@@ -228,7 +228,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                     WriteLiteral("                        ");
                     EndContext();
                     BeginContext(1249, 73, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "89c8ff7df89248d4b25676e3425248a3", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "413789b6fff84a618896e8d0cbad4887", async() => {
                         BeginContext(1286, 27, false);
 #line 30 "C:\Financeiro\WebFinancas\Views\RegisterTransaction\Extract.cshtml"
                                                        Write(item.NameAccount.ToString());

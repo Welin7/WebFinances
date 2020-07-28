@@ -49,3 +49,4 @@ C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.genruntimeconfig.c
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.csproj.CopyComplete
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\WebFinancas.csprojAssemblyReference.cache
 C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\RegisterTransaction\DeleteTransaction.cshtml.g.cs
+C:\Financeiro\WebFinancas\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_LayoutLogin.cshtml.g.cs

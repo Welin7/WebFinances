@@ -1,32 +1,40 @@
 ﻿@model UserModel
 
 @{
-    try
-    {
-        if (TempData["MensageLoginInvalid"].ToString() != null)
-        {
-            <div class="alert alert-danger">
-                <strong>Attention!</strong> @TempData["MensageLoginInvalid"]
-            </div>
-        }
-    }
-    catch { }
+    Layout = "../Shared/_LayoutLogin.cshtml";
+    
 }
 
-<form asp-controller="User" asp-action="ValidateLogin">
-    <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" class="form-control" asp-for="Email_Adress">
-    </div>
-    <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" asp-for="Password">
-    </div>
-    <div class="form-group form-check">
-        <label class="form-check-label">
-            <input class="form-check-input" type="checkbox"> Remember me Access
-        </label>
-    </div>
-    <button type="submit" class="btn btn-primary">Log in</button>
-</form>
+    <div class="container" style="background-color:Menu; border-radius:10px; padding=20px; width:315px;">
+        @{
+            try
+            {
+                if (TempData["MensageLoginInvalid"].ToString() != null)
+                {
+                    <div class="alert alert-danger">
+                        <strong>Attention!</strong> @TempData["MensageLoginInvalid"]
+                    </div>
+                }
+            }
+            catch { }
 
+        }
+
+        <form asp-controller="User" asp-action="ValidateLogin">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" asp-for="Email_Adress">
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" asp-for="Password">
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox"> Remember me Access
+                </label>
+            </div>
+            <button type="button" class="btn btn-block btn-primary" onclick="javascript:window.location.href='../User/Register'">Register</button>
+            <button type="submit" class="btn btn-block btn-success">Log in</button>
+        </form>
+    </div>

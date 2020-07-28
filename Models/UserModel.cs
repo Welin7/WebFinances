@@ -15,13 +15,15 @@ namespace WebFinancas.Models
         [Required(ErrorMessage = "Enter your name.")]
         public string name { get; set; }
 
-        [Required(ErrorMessage = "Enter your Email.")]
+        [Required(ErrorMessage = "Enter your email.")]
+        [DataType(DataType.EmailAddress)]
+        [EmailAddress(ErrorMessage = "Informed email is not valid.")]
         public string Email_Adress { get; set; }
 
-        [Required(ErrorMessage = "Enter your Password.")]
+        [Required(ErrorMessage = "Enter your password.")]
         public string Password { get; set; }
 
-        [Required(ErrorMessage = "Enter your Date Birth.")]
+        [Required(ErrorMessage = "Enter your date birth.")]
         public string Date_Birth { get; set; }
 
         public bool ValidateLogin()

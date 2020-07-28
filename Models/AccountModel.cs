@@ -13,7 +13,7 @@ namespace WebFinancas.Models
     {
         public int Id { get; set; }
         
-        [Required(ErrorMessage = "Enter your Account name.")]
+        [Required(ErrorMessage = "Enter your account name.")]
         public string NameAccount { get; set; }
         
         [Required(ErrorMessage = "Enter your account balance.")]
@@ -28,6 +28,10 @@ namespace WebFinancas.Models
 
         }
 
+        private string id_User_Logged()
+        {
+            return __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
+        }
         //Receives the context for access to session variables
         public AccountModel(IHttpContextAccessor httpContextAccessor)
         {
@@ -38,8 +42,7 @@ namespace WebFinancas.Models
         {
             List<AccountModel> List = new List<AccountModel>();
             AccountModel item;
-            string id_User_Logged = __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
-            string sql = $"SELECT ID, NAMEACCOUNT, BALANCE, USER_ID FROM ACCOUNT WHERE USER_ID = {id_User_Logged}";
+            string sql = $"SELECT ID, NAMEACCOUNT, BALANCE, USER_ID FROM ACCOUNT WHERE USER_ID = {id_User_Logged()}";
             DAL objectDAL = new DAL();
             DataTable datatable = objectDAL.ReturnDataTable(sql);
 
@@ -58,8 +61,7 @@ namespace WebFinancas.Models
 
         public void RegisterAccount()
         {
-            string id_User_Logged = __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
-            string sql = $"INSERT INTO ACCOUNT(NAMEACCOUNT, BALANCE, USER_ID) VALUES('{NameAccount}','{Balance}','{id_User_Logged}')";
+            string sql = $"INSERT INTO ACCOUNT(NAMEACCOUNT, BALANCE, USER_ID) VALUES('{NameAccount}','{Balance}','{id_User_Logged()}')";
             DAL objectDAL = new DAL();
             objectDAL.ExecuteCommandSql(sql);
         }

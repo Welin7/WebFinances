@@ -77,7 +77,7 @@ namespace WebFinancas.Controllers
 
         public IActionResult FinanceReport()
         {
-            List<FinanceReport> list = new FinanceReport().ReturnDataGraphicPie();
+            List<FinanceReport> list = new FinanceReport(__httpContextAccessor).ReturnDataGraphicPie();
             string values = "";
             string labels = "";
             string colors = "";

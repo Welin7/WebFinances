@@ -13,17 +13,17 @@ namespace WebFinancas.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Enter the Date of Transaction.")]
+        [Required(ErrorMessage = "Enter the date of transaction.")]
         public string DateTransaction { get; set; }
 
         public string FinalDate { get; set; } //include to filter in Extract
 
         public string Type { get; set; }
 
-        [Required(ErrorMessage = "Enter the Value.")]
+        [Required(ErrorMessage = "Enter the value.")]
         public double Value { get; set; }
 
-        [Required(ErrorMessage = "Enter the Description.")]
+        [Required(ErrorMessage = "Enter the description.")]
         public string Description { get; set; }
 
         public int Account_Id { get; set; }
@@ -41,6 +41,11 @@ namespace WebFinancas.Models
         public TransactionModel()
         {
 
+        }
+
+        private string id_User_Logged()
+        {
+            return __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
         }
 
         //Receives the context for access to session variables
@@ -76,12 +81,11 @@ namespace WebFinancas.Models
 
             }
 
-            string id_User_Logged = __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
             string sql = " SELECT T.Id, T.DateTransaction, T.Type, T.Value, T.Description, " +
                          " T.Account_Id, A.NameAccount, PlaneAccount_Id, PA.Description As NamePlaneAccount FROM Transaction T " +
                          " INNER JOIN Account A on A.Id = T.Account_Id " +
                          " INNER JOIN PlaneAccount PA on PA.Id = T.PlaneAccount_Id " +
-                         $" WHERE T.User_Id = {id_User_Logged} {filter} ORDER BY T.DateTransaction DESC LIMIT 15";
+                         $" WHERE T.User_Id = {id_User_Logged()} {filter} ORDER BY T.DateTransaction DESC LIMIT 15";
 
             DAL objectDAL = new DAL();
             DataTable datatable = objectDAL.ReturnDataTable(sql);
@@ -107,12 +111,11 @@ namespace WebFinancas.Models
         public TransactionModel LoadTransaction(int? Id)
         {
             TransactionModel item;
-            string id_User_Logged = __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
             string sql = " SELECT T.Id, T.DateTransaction, T.Type, T.Value, T.Description, " +
                          " T.Account_Id, A.NameAccount, PlaneAccount_Id, PA.Description As NamePlaneAccount FROM Transaction T " +
                          " INNER JOIN Account A on A.Id = T.Account_Id " +
                          " INNER JOIN PlaneAccount PA on PA.Id = T.PlaneAccount_Id " +
-                         $" WHERE T.User_Id = {id_User_Logged} AND T.Id = '{Id}'";
+                         $" WHERE T.User_Id = {id_User_Logged()} AND T.Id = '{Id}'";
 
             DAL objectDAL = new DAL();
             DataTable datatable = objectDAL.ReturnDataTable(sql);
@@ -133,13 +136,12 @@ namespace WebFinancas.Models
 
         public void RegisterTransaction()
         {
-            string id_User_Logged = __httpContextAccessor.HttpContext.Session.GetString("IdUserLogged");
             string sql = "";
 
             if (Id == 0)
             {
                 sql = "INSERT INTO TRANSACTION(DATETRANSACTION, TYPE, VALUE, DESCRIPTION, ACCOUNT_ID, PLANEACCOUNT_ID, USER_ID) " +
-                      $" VALUES('{DateTime.Parse(DateTransaction).ToString("yyyy/MM/dd")}','{Type}','{Value}','{Description}','{Account_Id}','{PlaneAccount_Id}','{id_User_Logged}')";
+                      $" VALUES('{DateTime.Parse(DateTransaction).ToString("yyyy/MM/dd")}','{Type}','{Value}','{Description}','{Account_Id}','{PlaneAccount_Id}','{id_User_Logged()}')";
             }
             else
             {
@@ -149,7 +151,7 @@ namespace WebFinancas.Models
                       $" DESCRIPTION = '{Description}', " +
                       $" ACCOUNT_ID = '{Account_Id}', " +
                       $" PLANEACCOUNT_ID = '{PlaneAccount_Id}' " +
-                      $"WHERE USER_ID = '{id_User_Logged}' AND ID = '{Id}'";
+                      $"WHERE USER_ID = '{id_User_Logged()}' AND ID = '{Id}'";
             }
 
             DAL objectDAL = new DAL();
